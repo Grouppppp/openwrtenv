@@ -1,5 +1,17 @@
 # OpenWrt Environment
 
+**Github**: [https://github.com/10467106/openwrtenv](https://github.com/10467106/openwrtenv)
+
+**Docker Hub**: [https://hub.docker.com/r/10467106/openwrtenv-sshd](https://hub.docker.com/r/10467106/openwrtenv-sshd)
+
+加了 sshd，并修复了大佬原版镜像 ssh 无法连接上的错误，系统编码改为 en_US.utf8，替换源为 Ubuntu cn 官方镜像。
+
+*镜像现已使用 Ubuntu18.04，大佬没改 readme，特此说明。*
+
+
+##### 这里是与大佬之间的分隔线
+---
+
 **Github**: [https://github.com/SuLingGG](https://github.com/SuLingGG)
 
 **Docker Hub**: [https://hub.docker.com/r/sulinggg/openwrtenv](https://hub.docker.com/r/sulinggg/openwrtenv)
