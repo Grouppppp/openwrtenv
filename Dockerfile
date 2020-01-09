@@ -23,7 +23,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
 	&& chown -R admin:admin /home/admin \
 	&& cp -R ./.oh-my-zsh/ /root/ \
 	&& cp ./.zshrc /root \
-	&& sed -i 's/\/home\/admin:/\/home\/admin:\/bin\/zsh/g' /etc/passwd \
+	&& sed -i 's/\/home\/admin:\/bin\/sh/\/home\/admin:\/bin\/zsh/g' /etc/passwd \
 	&& ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	&& dpkg-reconfigure -f noninteractive tzdata
 
