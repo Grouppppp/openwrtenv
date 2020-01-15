@@ -22,6 +22,7 @@ RUN sed -i 's/archive.ubuntu.com/cn.archive.ubuntu.com/g' /etc/apt/sources.list 
 	&& sed -i 's/plugins=(git)/plugins=(git sudo zsh-syntax-highlighting zsh-autosuggestions)/g' .zshrc \
 	&& sed -i 's/# DISABLE_AUTO_UPDATE/DISABLE_AUTO_UPDATE/g' .zshrc \
 	&& echo 'export LC_ALL="en_US.UTF-8"' >> .zshrc \
+	&& echo 'export LANG="en_US.UTF-8"' >> .zshrc \
 	&& chown -R admin:admin /home/admin \
 	&& cp -R ./.oh-my-zsh/ /root/ \
 	&& cp ./.zshrc /root \
