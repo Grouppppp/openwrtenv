@@ -4,7 +4,7 @@ MAINTAINER root "i@1046.me"
 
 RUN sed -i 's/archive.ubuntu.com/cn.archive.ubuntu.com/g' /etc/apt/sources.list \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -y update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends wget net-tools openssh-server curl vim htop git screen sudo nano ca-certificates rsync zsh tzdata build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf locales automake libtool autopoint device-tree-compiler \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends wget proxychains net-tools openssh-server curl vim htop git screen sudo nano ca-certificates rsync zsh tzdata build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf locales automake libtool autopoint device-tree-compiler gperf antlr3 \
 	&& DEBIAN_FRONTEND=noninteractive apt-get autoremove -y \
 	&& DEBIAN_FRONTEND=noninteractive apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
