@@ -1,10 +1,10 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 MAINTAINER root "i@1046.me"
 
 RUN sed -i 's/archive.ubuntu.com/cn.archive.ubuntu.com/g' /etc/apt/sources.list \
 	&& DEBIAN_FRONTEND=noninteractive apt-get -y update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends wget proxychains net-tools openssh-server curl vim htop git screen sudo nano ca-certificates rsync zsh tzdata build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf locales automake libtool autopoint device-tree-compiler gperf antlr3 \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends wget proxychains net-tools openssh-server curl vim htop git screen sudo nano ca-certificates rsync zsh tzdata build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf locales automake libtool autopoint device-tree-compiler gperf antlr3 cron \
 	&& DEBIAN_FRONTEND=noninteractive apt-get autoremove -y \
 	&& DEBIAN_FRONTEND=noninteractive apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -30,6 +30,7 @@ RUN sed -i 's/archive.ubuntu.com/cn.archive.ubuntu.com/g' /etc/apt/sources.list 
 	&& ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	&& dpkg-reconfigure -f noninteractive tzdata
 
+CMD service cron start
 CMD ["sudo", "/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config"]
 EXPOSE 22
 
